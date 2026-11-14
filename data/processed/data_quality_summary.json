@@ -1,0 +1,8 @@
+{
+  "raw_rows": 119390,
+  "raw_columns": 32,
+  "duplicate_rows_removed": 31994,
+  "clean_rows": 87395,
+  "clean_columns": 39,
+  "negative_adr_rows_removed": 1
+}
