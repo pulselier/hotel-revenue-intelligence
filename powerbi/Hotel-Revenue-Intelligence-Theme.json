@@ -1,0 +1,20 @@
+{
+  "name": "Hotel Revenue Intelligence",
+  "dataColors": ["#12B8A6", "#F2A65A", "#6C8EBF", "#E76F51", "#7A9E7E", "#A78BFA", "#E9C46A", "#5BC0EB"],
+  "background": "#101820",
+  "foreground": "#F3F6F8",
+  "tableAccent": "#12B8A6",
+  "good": "#42C98A",
+  "neutral": "#F2A65A",
+  "bad": "#E76F51",
+  "maximum": "#12B8A6",
+  "center": "#243746",
+  "minimum": "#17232D",
+  "null": "#657786",
+  "textClasses": {
+    "callout": { "fontSize": 28, "fontFace": "Aptos Display", "color": "#F3F6F8" },
+    "title": { "fontSize": 14, "fontFace": "Aptos Display", "color": "#F3F6F8" },
+    "header": { "fontSize": 12, "fontFace": "Aptos", "color": "#D5DEE5" },
+    "label": { "fontSize": 10, "fontFace": "Aptos", "color": "#B8C5CE" }
+  }
+}

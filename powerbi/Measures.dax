@@ -1,0 +1,53 @@
+-- Table name expected: Hotel Bookings
+-- Set is_canceled and is_repeated_guest to Whole Number; adr and estimated_booking_revenue to Decimal Number.
+
+Total Bookings = COUNTROWS('Hotel Bookings')
+
+Completed Bookings =
+CALCULATE([Total Bookings], 'Hotel Bookings'[is_canceled] = 0)
+
+Canceled Bookings =
+CALCULATE([Total Bookings], 'Hotel Bookings'[is_canceled] = 1)
+
+Cancellation Rate =
+DIVIDE([Canceled Bookings], [Total Bookings], 0)
+
+Completed Booking Share =
+DIVIDE([Completed Bookings], [Total Bookings], 0)
+
+Average ADR (Completed) =
+CALCULATE(AVERAGE('Hotel Bookings'[adr]), 'Hotel Bookings'[is_canceled] = 0)
+
+Average Stay (Completed, Nights) =
+CALCULATE(AVERAGE('Hotel Bookings'[total_nights]), 'Hotel Bookings'[is_canceled] = 0)
+
+Completed Booking Value Proxy =
+CALCULATE(SUM('Hotel Bookings'[estimated_booking_revenue]), 'Hotel Bookings'[is_canceled] = 0)
+
+Avg Value per Completed Booking =
+DIVIDE([Completed Booking Value Proxy], [Completed Bookings], 0)
+
+Completed Nights =
+CALCULATE(SUM('Hotel Bookings'[total_nights]), 'Hotel Bookings'[is_canceled] = 0)
+
+Average Lead Time (Days) =
+AVERAGE('Hotel Bookings'[lead_time])
+
+Average Guests per Booking =
+AVERAGE('Hotel Bookings'[total_guests])
+
+Repeat Guest Bookings =
+CALCULATE([Total Bookings], 'Hotel Bookings'[is_repeated_guest] = 1)
+
+Repeat Guest Share =
+DIVIDE([Repeat Guest Bookings], [Total Bookings], 0)
+
+Special Requests per Booking =
+AVERAGE('Hotel Bookings'[total_of_special_requests])
+
+-- Optional comparison measure; requires a marked Date table named Calendar and an active relationship to arrival_date.
+Completed Booking Value Proxy PY =
+CALCULATE([Completed Booking Value Proxy], SAMEPERIODLASTYEAR('Calendar'[Date]))
+
+Completed Booking Value Proxy YoY % =
+DIVIDE([Completed Booking Value Proxy] - [Completed Booking Value Proxy PY], [Completed Booking Value Proxy PY])
