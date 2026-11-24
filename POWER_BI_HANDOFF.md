@@ -90,4 +90,4 @@ Use a 16:9 canvas, dark page background (`#101820`), teal for primary series (`#
 - This dataset is a historical sample, not a live feed; avoid implying current inventory or forecasted revenue.
 - The supplied cleaning process removed 31,994 duplicate rows, filled country/agent/children nulls, removed the company field, and removed one negative-ADR record. See `data/processed/data_quality_summary.json`.
 
-## Final report file`r`n`r`nThe final Power BI Desktop report is included at `powerbi/Hotel-Revenue-Intelligence.pbix`. The package also contains the theme, measures, and Power Query import script used as supporting materials.`r`n
+## Final report file The final Power BI Desktop report is included at `powerbi/Hotel-Revenue-Intelligence.pbix`. The package also contains the theme, measures, and Power Query import script used as supporting materials.
